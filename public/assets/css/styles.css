@@ -1,3 +1,4 @@
+/*sets the html and body to have a height of 100% and no margins or padding*/
 html,
 body {
   height: 100%;
@@ -5,10 +6,13 @@ body {
   padding: 0;
 }
 
+/*sets the save-note, new-note, and clear-btn initial displays to none*/
 .save-note, .new-note, .clear-btn {
   display: none;
 }
 
+/*sets the icons to have a left and right margin of 15px, a font size of 1.5 
+rem, and have a pointer cursor*/
 .icons {
   margin-left: 15px;
   margin-right: 15px;
@@ -16,6 +20,8 @@ body {
   cursor: pointer;
 }
 
+/*sets the note textarea, and title, to have a color of #000000, width of 100%,
+no outline, and no border*/
 .note-textarea,
 .note-title {
   color: #000000;
@@ -24,23 +30,32 @@ body {
   border: none;
 }
 
+/*sets the textarea to not be resizable, the height is set to 63 pixels less 
+than its container height */
 .note-textarea {
   resize: none;
   height: calc(100% - 63px);
   padding-top: 15px;
 }
 
+/*sets the note title to have a height of 50 pixels, a margin top of 13 pixels, 
+and font of 3 rem*/
 .note-title {
   height: 50px;
   margin-top: 13px;
   font-size: 3rem;
 }
 
+/*sets the note to read only, and the text area to read only so they can't be 
+changed, and the color to #757575*/
 .note-title:read-only,
 .note-textarea:read-only {
   color: #757575;
 }
 
+/*sets the list container card to have a height of 70 pixels less than the view
+hieght, no border on the bottom, and the radius for left and right bottom set to
+0 so it is sharp*/
 .list-container .card {
   height: calc(100vh - 70px);
   border-bottom: none;
@@ -48,10 +63,12 @@ body {
   border-bottom-left-radius: 0;
 }
 
+/*The list container is placed completely against the left side*/
 .list-container {
   padding-left: 0;
 }
 
+/*sets these sections to have no border top, and sharp right and left bottom radii*/
 .list-container .list-group,
 .list-container .list-group-item:first-child,
 .list-container .card {
@@ -60,16 +77,20 @@ body {
   border-top-left-radius: 0;
 }
 
+/*sets the list item title to display inline block and take up 75%*/
 .list-item-title {
   display: inline-block;
   width: 75%;
 }
 
+/*sets the font size for the list container to 1.1 rem and give it a pointer cursor*/
 .list-container i {
   font-size: 1.1rem;
   cursor: pointer;
 }
 
+/*sets list containter and group item to have no border on the left or right, a padding
+ of 20px, and a pointer cursor*/
 .list-container .list-group-item {
   border-left: none;
   border-right: none;

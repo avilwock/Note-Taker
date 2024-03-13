@@ -20,16 +20,18 @@ const saveData = (data) => {
 };
 
 module.exports = function (app) {
+  //gets the array stored in the notes
   app.get('/api/notes', (req, res) => {
     const data = loadData();
     res.json(data);
   });
 
+  //looks for a specific id within the array for one note
   app.get('/api/notes/:id', (req, res) => {
     const textId = req.params.id;
     const data = loadData();
     const selectedNote = data.find(note => note.id ===textId);
-
+    //sets it up so that if the selected note is not found, then an error populates
     if (selectedNote) { 
       res.json(selectedNote);
       } else {
@@ -37,22 +39,8 @@ module.exports = function (app) {
       }
   })
 
+  //sets up to post to the notes page, requiring a title, and a text. It gives a unique id
   app.post('/api/notes', (req, res) => {
-    const newNote = {
-      title: req.body.title,
-      text: req.body.text,
-      id: uuidv4(),
-    };
-
-    const data = loadData();
-    data.push(newNote);
-
-    saveData(data);
-
-    res.json(newNote);
-  });
-
-  app.post('/api/submit', (req, res) => {
     const submittedData = {
       title: req.body.title,
       text: req.body.text,
@@ -64,10 +52,18 @@ module.exports = function (app) {
 
     saveData(data);
 
-    // Assuming there's a callback function in your JavaScript handling the form submission
-    // You can customize the response based on your needs
     res.send('<script>window.location.href="/";</script>');
   });
 
-  // Additional routes can go here
+  //sets up the file so that tasks can be deleted 
+  app.delete('/api/notes/:id', (req, res) => {
+    const deleteId = req.params.id;
+
+      let data = loadData();
+      data = data.filter(note => note.id !== deleteId);
+
+      saveData(data);
+      //often used with delete requests to indicate successful deletion
+      res.sendStatus(204);
+    });
 };
