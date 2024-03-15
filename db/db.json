@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "title": "Dishes",
+    "text": "Hand wash dishes, run dishwasher",
+    "id": "5382ab26-a3fa-4d9f-a6ca-8780d057b748"
+  },
+  {
+    "title": "Clean Room",
+    "text": "Clean counters, pick up floor, vacuum",
+    "id": "4b4bedae-8190-440a-8b69-73d3299ff8f9"
+  },
+  {
+    "title": "Project",
+    "text": "Work on project, complete README",
+    "id": "d424ad6e-45c4-47ce-9563-9daf13aa175c"
+  },
+  {
+    "title": "Read",
+    "text": "Read for 30 minutes",
+    "id": "cd22bd2a-a4e7-4066-8064-1bbd4ff4dedd"
+  }
+]
